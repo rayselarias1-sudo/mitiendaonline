@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Mi Tienda Online</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            margin: 30px 0 20px;
+            font-size: 24px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: #add8e6;
+        }
+        
+        .product-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-secondary {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            margin-top: 5px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #27ae60;
+        }
+        
+        .btn-view-more {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            margin: 10px 0 30px;
+            padding: 10px 20px;
+            display: block;
+            width: 150px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-view-more:hover {
+            background-color: #d35400;
+        }
+        
+        .category-section {
+            margin-bottom: 40px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Productos - Mi Tienda Online</h1>
+        <p>Los mejores productos al mejor precio</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#moviles">Móviles</a></li>
+            <li><a href="#accesorios">Accesorios</a></li>
+            <li><a href="#ropa-zapatos">Ropa-Zapatos</a></li>
+            <li><a href="#equipos">Equipos</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Sección Móviles -->
+        <div class="category-section" id="moviles">
+            <h2 class="section-title">Móviles</h2>
+            <div class="products">
+                <!-- Móvil 1 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/61/f7/d1/61f7d12c894ad0e83e3405ed1c8ea5c2.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi Note 14</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla AMOLED 6.67",1080x2400pixels
+                            <br>Procesador MediaTek Dimensity 7025 Ultra 2.5GHz
+                            <br>Memoria RAM 6GB/8GB/128GB según modelo
+                            <br>Almacenamiento 128/256/512GB según modelo
+                            <br>Expansión microCD
+                            <br>Cámara Triple 108MP+8MP+2MP
+                            <br>Batería 5110mAh
+                            <br>Sistema operativo Android 14
+                            <br>Conexión 2/3/4G - 2/3/4/5G según modelo
+                        </p>
+                        <p class="product-price">$190 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Móvil 2 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/91/c2/75/91c275a69d02dd0b547c24ac4aac9bef.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A26</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.7" Super AMOLED, Full HD+ (1080 x 2340), 120 Hz, Gorilla Glass Victus+
+                            <br>Procesador Exynos 1280
+                            <br>Memoria RAM 6GB/8GB según modelo
+                            <br>Almacenamiento 128 GB / 256 GB, expandible con microSD hasta 1 TB
+                            <br>Cámara Triple: 50 MP (f/1.8, OIS) + 8 MP ultra gran angular + 2 MP macro,FRONTAL 13MP
+                            <br>Batería 5000 mAh, carga rápida 25W
+                            <br>Sistema operativo Android 15, One UI 7
+                            <br>Conexión 2/3/4/5G
+                        </p>
+                        <p class="product-price">$260 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Móvil 3 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/85/73/31/857331b8d20aa9edeabd3520ee818ff7.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Tecno Spark 30</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD 6.78" FHD+ (1080x2460px), 90Hz, 800nits
+                            <br>Procesador MediaTek Helio G91 Octa-core (2x2.0GHz + 6x1.8GHz)
+                            <br>Memoria RAM 8GB LPDDR4X (expansión virtual +8GB) 
+                            <br>Almacenamiento 128GB/256GB eMMC 5.1, ampliable microSDXC (hasta 1TB)
+                            <br>Cámara 64MP (Sony IMX682, PDAF, f/1.8, Quad-LED) + 0.08MP auxiliar FRONTAL 13MP (gran angular, Flash Dual-LED, f/2.4)
+                            <br>Batería 5000 mAh, carga rápida 18W
+                            <br>Sistema operativo Android 14 + HiOS 14
+                            <br>Conexión 2/3/4G LTE
+                        </p>
+                        <p class="product-price">$160 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 4 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/6e/3b/23/6e3b23803c7a2ceab6994b9ce3f35598.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu G73</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD 6.8" (720 x 1600 píxeles), 90Hz, 258 ppi, ratio 20:9, ~84.2% pantalla-cuerpo
+                            <br>Procesador Unisoc Tiger T606 Octa-core (2x1.6 GHz Cortex-A75 + 6x1.6 GHz Cortex-A55)
+                            <br>Memoria RAM 6GB LPDDR4X
+                            <br>Almacenamiento 	128GB, ampliable con microSD hasta 128GB
+                            <br>Cámara Triple: 50MP principal + 0.3MP + 0.3MP FRONTAL 8MP
+                            <br>Batería 5000 mAh
+                            <br>Sistema operativo Android 13
+                            <br>Conexión 2/3/4G LTE
+                        </p>
+                        <p class="product-price">$120 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 5 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/c2/b5/b1/c2b5b1bfb5d080455362fb185714cb10.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi Note 12 Pro</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla AMOLED 6.67" FHD+ (1080 x 2400 px), 120Hz, brillo hasta 900 nits
+                            <br>Procesador MediaTek Dimensity 1080, Octa-core 2.6 GHz
+                            <br>Memoria RAM 6GB/8GB/12GB según modelo
+                            <br>Almacenamiento 	128GB / 256GB, sin ranura para microSD
+                            <br>Cámara Triple: 50MP (f/1.9, gran angular, OIS), 8MP (ultra ancha), 2MP (macro) FRONTAL 16MP
+                            <br>Batería 5000 mAh, carga rápida 67W
+                            <br>Sistema operativo Android 12, MIUI
+                            <br>Conexión 2/3/4/5G según modelo
+                        </p>
+                        <p class="product-price">$250 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 6 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/53/4f/8e/534f8e44de58e6fe1ea178d40ad36b6a.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A16</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla Super AMOLED de 6,7 pulgadas, resolución 1080 x 2340 píxeles, tasa de refresco de 90 Hz
+                            <br>Procesador Octa-core, con variantes de MediaTek Dimensity 6300 o Exynos 1330, dependiendo de la región
+                            <br>Memoria RAM 4GB a 8GB
+                            <br>Almacenamiento 	128 GB a 256 GB, con posibilidad de expansión mediante microSD
+                            <br>Cámara Triple cámara con sensor principal de 50 MP (f/1.8), cámara ultra gran angular de 5 MP (f/2.2) và cámara macro de 2 MP (f/2.4) FRONTAL 13 MP (f/2.0)
+                            <br>Batería 5000 mAh,con carga rápida de 25 W (cargador no incluido)
+                            <br>Sistema operativo Android 14 con One UI 6.1, con promesa de seis años de actualizaciones
+                            <br>Conexión 2/3/4/5G según modelo
+                        </p>
+                        <p class="product-price">$160 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 7 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/54/5f/8a/545f8ad9fc3d811818fc1db18e34e2e3.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu G53</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD de 6.5 pulgadas, resolución 720x1600 píxeles, ratio 20:9, densidad 270ppi
+                            <br>Procesador Unisoc Tiger T310, 4 núcleos a 2.0GHz
+                            <br>Memoria RAM 4GB
+                            <br>Almacenamiento 	64GB, expandible mediante microSD hasta 128GB
+                            <br>Cámara  Doble cámara, principal de 13MP + 0.3MP de profundidad, flash LED, grabación en 1080p@30fps FRONTAL 8MP, grabación en 1080p@30fps
+                            <br>Batería 5000 mAh,con carga rápida de 10W
+                            <br>Sistema operativo Android 13
+                            <br>Conexión 2/3/4G
+                        </p>
+                        <p class="product-price">$105 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 8 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/45/b1/cb/45b1cb4c25c5c14e18526e5793657997.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Tecno Spark 30C</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD de 6.67 pulgadas, resolución 720 x 1600 píxeles, tasa de refresco 120 Hz, ratio de aspecto 20:9, densidad de píxeles 263 ppi
+                            <br>Procesador  MediaTek Helio G81, octa-core (2x 2.0 GHz Cortex-A75 + 6x 1.8 GHz Cortex-A55), tecnología 12 nm
+                            <br>Memoria RAM 4GB, 6GB u 8GB según la variante
+                            <br>Almacenamiento 	128GB o 256GB, ampliable mediante microSD
+                            <br>Cámara  Dual, principal de 50 MP con lente gran angular, PDAF, flash LED, grabación de video 1080p a 30 fps FRONTAL 8 MP
+                            <br>Batería 5000 mAh,con carga rápida de 18W
+                            <br>Sistema operativo Android 14
+                            <br>Conexión 2/3/4G 
+                        </p>
+                        <p class="product-price">$130 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 9 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/31/28/68/312868d6f4d0d85f6320af1f777ad226.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi A5</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD de 6.88 pulgadas, resolución 1640 x 720 píxeles, tasa de refresco de 120 Hz, brillo de 450 nits, densidad de píxeles 260 ppi, cristal Corning Glass
+                            <br>Procesador  UNISOC T7250 de ocho núcleos con hasta 1.8 GHz
+                            <br>Memoria RAM 3 GB o 4 GB (expandible virtualmente hasta 6 GB o 8 GB respectivamente)
+                            <br>Almacenamiento 	64 GB o 128 GB eMMC 5.1, ampliable mediante microSD hasta 1 TB
+                            <br>Cámara  Principal de 32 MP, apertura f/2.0, flash LED, con tecnología dual cámara FRONTAL 8 MP, apertura f/2.0
+                            <br>Batería 5200 mAh con carga rápida de 15 W
+                            <br>Sistema operativo Xiaomi HyperOS basado en Android 15 (Go Edition)
+                            <br>Conexión 2/3/4G 
+                        </p>
+                        <p class="product-price">$115 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 10 -->
+                <div class="product-card">
+                    <img src="https://colombianadetecnologia.com/v/image/cache/catalog/CELULARES/CEL_24-000000000008-900x900.png" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Krip K69</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  6.8 pulgadas HD+
+                            <br>Procesador  Unisoc T606
+                            <br>Memoria RAM 8GB
+                            <br>Almacenamiento 	256 GB, expandible mediante microSD
+                            <br>Cámara  Principal de 50 MP FRONTAL 8 MP
+                            <br>Batería 5000 mAh 
+                            <br>Sistema operativo Android 13
+                            <br>Conexión 2/3/4G 
+                        </p>
+                        <p class="product-price">$105 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 11 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/3c/05/b8/3c05b845bd85ce5b2ab44f6f02d94ae7.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Meizu MBLU 21</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  6.79 pulgadas HD+ (720 x 1640 píxeles), tecnología IPS TFT, tasa de refresco de 90 Hz, densidad de píxeles 264 ppi
+                            <br>Procesador  Unisoc Tiger T606 Octa-core (2x 1.6 GHz Cortex-A75 + 6x 1.6 GHz Cortex-A55), tecnología de fabricación 12 nm
+                            <br>Memoria RAM 4GB o 6 GB, con posibilidad de memoria virtual adiciona
+                            <br>Almacenamiento 	 64 GB o 128 GB, ampliable mediante tarjeta microSD (excluyendo la ranura para segunda SIM)
+                            <br>Cámara  Dual, principal de 13 MP con enfoque automático PDAF y lente auxiliar 0.08 MP, flash LED FRONTAL 8 MP
+                            <br>Batería 4900 mAh 
+                            <br>Sistema operativo Android 14
+                            <br>Conexión 2/3/4G LTE 
+                        </p>
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 12 -->
+                <div class="product-card">
+                    <img src="https://media.falabella.com/falabellaPE/135754220/w=800,h=800,fit=pad" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-ZTE Blade A35 core</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  5", resolución 480 x 854 píxeles
+                            <br>Procesador  Octa-Core Unisoc SC9863A1 / 1.6GHz
+                            <br>Memoria RAM 2GB (algunos modelos traen 2GB adicionales virtuales)
+                            <br>Almacenamiento 	32GB o 64GB (según variante), expandible por microSD hasta 128GB
+                            <br>Cámara  2MP FRONTAL 0.3MP
+                            <br>Batería 2000 mAh 
+                            <br>Sistema operativo Android 13 Go Edition
+                            <br>Conexión 2/3/4G LTE 
+                        </p>
+                        <p class="product-price">$80 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 13 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/c5/1e/1b/c51e1b19b7f7a7d8699d36ed8c196d2c.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Tecno go</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  IPS LCD de 6.67 pulgadas, resolución 720 x 1600 píxeles, tasa de refresco 120 Hz, relación de aspecto 20:9
+                            <br>Procesador  Unisoc T615, octa-core (2 núcleos Cortex-A75 1.8 GHz + 6 núcleos Cortex-A55 1.6 GHz), tecnología 12 nm
+                            <br>Memoria RAM 3GB o 4GB LPDR4X
+                            <br>Almacenamiento 	64GB o 128GB eMMC 5.1, ampliable por microSD
+                            <br>Cámara  13 MP, apertura f/1.8, gran angular, PDAF, flash LED dual, soporte de video 1080p @30 fps FRONTAL 8 MP con flash LED dual, soporte de video
+                            <br>Batería 5000 mAh con carga rápida de 15W 
+                            <br>Sistema operativo Android 14 (Upside Down Cake) con capa HIOS 14
+                            <br>Conexión 2/3/4G LTE 
+                        </p> 
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 14 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/51/04/df/5104df50f0f0bdf301f339d26e5b70c7.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A05</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  6.7" TFT PLS, resolución 720 x 1600 píxeles (HD+), tasa de refresco 60Hz
+                            <br>Procesador  MediaTek Helio G85 (Octa-Core, 2x 2.0 GHz Cortex-A75 + 6x 1.8 GHz Cortex-A55)
+                            <br>Memoria RAM 4GB (también disponible versión con 6GB)
+                            <br>Almacenamiento 	64GB o 128GB, ampliable con microSD hasta 1TB
+                            <br>Cámara  Dual: 50 MP (principal) + 2 MP (profundidad), flash LED FRONTAL 8 MP, apertura f/2.0
+                            <br>Batería 5000 mAh con carga rápida de 25W 
+                            <br>Sistema operativo Android 13, actualización a Android 15
+                            <br>Conexión 2/3/4G LTE 
+                        </p> 
+                        <p class="product-price">$115 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 15 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/0b/8b/10/0b8b1059fe5ba049ae8fd30dec61dd4d.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Tecno Spark 20</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS LCD de 6.6 pulgadas, resolución 720 x 1612 píxeles, tasa de refresco 90 Hz, relación de aspecto 20:9
+                            <br>Procesador  MediaTek Helio G85, octa-core (2 núcleos Cortex-A75 a 2.0 GHz + 6 núcleos Cortex-A55 a 1.8 GHz)
+                            <br>Memoria RAM 4GB o 8GB, con posibilidad de fusión de memoria para ampliar hasta 16GB
+                            <br>Almacenamiento 	128GB o 256GB, expandible con microSD
+                            <br>Cámara   Dual, 50 MP (principal) con apertura f/1.6 y lente secundaria de 0.08 MP, con flash LED dual y soporte HDR FRONTAL 32 MP con flash LED dual
+                            <br>Batería 5000 mAh con carga rápida de 18W 
+                            <br>Sistema operativo Android 13
+                            <br>Conexión 2/3/4G LTE 
+                        </p> 
+                        <p class="product-price">$155 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 16 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/58/f8/de/58f8defd7cc0842e08293e1d2e946544.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi 14C</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla LCD de 6.88 pulgadas con resolución HD+ (1640 x 720 píxeles), tasa de refresco de 120 Hz, tasa de muestreo táctil de 240 Hz, brillo típico de 450 nits y máximo de 600 nits
+                            <br>Procesador MediaTek Helio G81 Ultra, octa-core (2 GHz), GPU Mali-G52 MC2
+                            <br>Memoria RAM 4 GB o 6 GB LPDDR4x, ampliable hasta 12 GB con RAM virtual
+                            <br>Almacenamiento 	128 GB (eMMC 5.1), ampliable con tarjeta microSD
+                            <br>Cámara   50 MP con lente secundaria para retratos, video Full HD 30 fps FRONTAL 13 MP, apertura f/2.0
+                            <br>Batería 5160 mAh con carga rápida de 18W 
+                            <br>Sistema operativo Xiaomi HyperOS basado en Android 14
+                            <br>Conexión 2/3/4G LTE 
+                        </p> 
+                        <p class="product-price">$135 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 17 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/2f/47/08/2f47087e9a327276c3576072feb5868a.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung F15</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla Super AMOLED de 6.6 pulgadas, resolución 1080 x 2340 píxeles (Full HD+), tasa de refresco 90 Hz, densidad de 390 ppi
+                            <br>Procesador MediaTek Dimensity 6100+ (Octa-Core: 2x 2.2 GHz Cortex-A76 y 6x 2.0 GHz Cortex-A55), tecnología 6 nm
+                            <br>Memoria RAM 4GB o 6GB LPDDR4X
+                            <br>Almacenamiento 	128GB, ampliable mediante microSDXC (ranura híbrida)
+                            <br>Cámara Triple cámara con sensor principal de 50 MP (ƒ/1.8, enfoque automático PDAF), cámara ultra gran angular de 5 MP (ƒ/2.2) y lente macro de 2 MP (ƒ/2.4) FRONTAL 13 MP, apertura ƒ/2.0
+                            <br>Batería 6000 mAh con carga rápida de 25W
+                            <br>Sistema operativo Android 14 con Samsung One UI 6
+                            <br>Conexión 2/3/4/5G
+                        </p> 
+                        <p class="product-price">$155 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 18 -->
+                <div class="product-card">
+                    <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/redmi-note-12-5g-international-0.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi Note 12 5G</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla AMOLED de 6.67 pulgadas, resolución 1080 x 2400 píxeles (Full HD+), tasa de refresco 120 Hz, brillo hasta 1200 nits
+                            <br>Procesador Qualcomm Snapdragon 4 Gen 1 Octa-Core a 2.0 GHz
+                            <br>Memoria RAM 4GB, 6GB u 8GB LPDDR4X
+                            <br>Almacenamiento 128GB UFS 2.2, ampliable con microSD (ranura compartida con SIM)
+                            <br>Cámara triple cámara 48MP (principal) + 8MP (ultra gran angular) + 2MP (macro) FRONTAL 13MP
+                            <br>Batería 5000 mAh con carga rápida de 33W
+                            <br>Sistema operativo Android 12 với MIUI 13 o 14 según versión
+                            <br>Conexión 2/3/4/5G
+                        </p> 
+                        <p class="product-price">$150 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 19 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/474x/be/f4/7f/bef47f236189dfd6e08661734320d8b3.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A42</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.6 pulgadas Super AMOLED, resolución 720 x 1600 píxeles, 60 Hz
+                            <br>Procesador  Qualcomm Snapdragon 750G Octa-Core (2x 2.2 GHz Kryo 570 + 6x 1.8 GHz Kryo 570)
+                            <br>Memoria RAM 4GB, 6GB u 8GB LPDDR4X
+                            <br>Almacenamiento 64GB o 128GB UFS 2.1, ampliable con microSD hasta 1TB (ranura compartida con SIM)
+                            <br>Cámara  cuádruple, 48MP (principal) + 8MP (ultra gran angular) + 5MP (macro) + 5MP (profundidad) FRONTAL 20MP
+                            <br>Batería 5000 mAh con carga rápida de 15W
+                            <br>Sistema operativo Android 10, actualizable a Android 13 con One UI
+                            <br>Conexión 2/3/4/5G
+                        </p> 
+                        <p class="product-price">$155 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 20 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/87/3d/0d/873d0decdb7265a8b7fdfe9e57072da8.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Itel A90</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.6 pulgadas IPS LCD, resolución 720 x 1612 píxeles, 90 Hz de tasa de refresco, brillo típico 480 nits, pico máximo 1500 nits
+                            <br>Procesador  Unisoc T7100 Octa-Core (2 núcleos Cortex-A75 a 1.8 GHz + 6 núcleos Cortex-A55 a 1.6 GHz)
+                            <br>Memoria RAM 3GB o 4GB
+                            <br>Almacenamiento 64GB, 128GB o 256GB, ampliable mediante microSDXC (ranura dedicada)
+                            <br>Cámara  13 MP con autoenfoque FRONTAL 5 MP
+                            <br>Batería 5000 mAh con carga rápida por cable de 15W
+                            <br>Sistema operativo Android 14 con itel OS 14
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 21 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/65/fe/2c/65fe2c1a685afef1feca8fe757929044.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A14</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla LCD PLS de 6.6 pulgadas, resolución Full HD+ 1080 x 2408 píxeles, tasa de refresco 90 Hz
+                            <br>Procesador  Exynos 1330 (también hay versiones con Dimensity 700 según región)
+                            <br>Memoria RAM 4 GB, también hay versiones con 6 GB u 8 GB
+                            <br>Almacenamiento 64 GB o 128 GB, con expansión microSD hasta 1 TB
+                            <br>Cámara  Triple cámara con sensor principal de 50 MP, más 2 sensores de 2 MP para macro y profundidad FRONTAL 13 MP
+                            <br>Batería 5000 mAh con carga rápida de 15 W
+                            <br>Sistema operativo Android 13 con capa One UI 5.0
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$150 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 22 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/1b/e4/ff/1be4ffb4a1a86bdf3db7ae1d82305ff0.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi Note 11E</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.58" LCD, resolución Full HD+ (1080 x 2408 píxeles), tasa de refresco de 90 Hz, densidad de 401 ppi
+                            <br>Procesador  MediaTek Dimensity 700, octa-core (2x2.2GHz Cortex-A76 + 6x2.0GHz Cortex-A55), 7nm
+                            <br>Memoria RAM 4GB/6GB, LPDDR4X
+                            <br>Almacenamiento 128GB UFS 2.2 (sin ranura para microSD)
+                            <br>Cámara  Principal de 50MP (f/1.8, sensor CMOS) + sensor de profundidad de 2MP (f/2.4) FRONTAL 5MP
+                            <br>Batería 5000mAh, Li-Polymer, carga rápida 18W, no extraíble
+                            <br>Sistema operativo MIUI 13 basado en Android 11
+                            <br>Conexión 2/3/4/5G
+                        </p> 
+                        <p class="product-price">$150 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 23 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/b8/55/4a/b8554ad254b358db4534480d74b658fc.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu G64</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla IPS TFT de 6.8 pulgadas, resolución HD+ (720 x 1600 píxeles), tasa de refresco 90 Hz
+                            <br>Procesador  Unisoc Tiger T606, octa-core a 1.6 GHz, GPU Mali-G57 MP1 @650 MHz
+                            <br>Memoria RAM 4 GB (con opción de ampliación a 14 GB mediante Xtra RAM virtual)
+                            <br>Almacenamiento 256 GB, ampliable mediante microSD hasta 256 GB
+                            <br>Cámara  Doble cámara de 50 MP + flash LED FRONTAL 8 MP
+                            <br>Batería 5000 mAh, Li-Ion, con duración de hasta 3 días
+                            <br>Sistema operativo Android 14
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$120 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 24 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/ee/1f/9d/ee1f9d27bce8eab3420304acb6d31b02.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A04E</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla LCD PLS de 6.5 pulgadas, resolución HD+ (720 x 1600 píxeles), relación de aspecto 20:9, tasa de refresco 60 Hz
+                            <br>Procesador MediaTek Helio P35, octa-core (4x Cortex-A53 a 2.3 GHz + 4x Cortex-A53 a 1.8 GHz)
+                            <br>Memoria RAM 3 GB o 4 GB
+                            <br>Almacenamiento 32 GB, 64 GB o 128 GB, ampliable mediante microSD hasta 1 TB
+                            <br>Cámara  Dual, principal de 13 MP f/2.2 + sensor de profundidad de 2 MP f/2.4 FRONTAL 5 MP f/2.2
+                            <br>Batería  5000 mAh, tipo polímero de litio, no especifica carga rápida
+                            <br>Sistema operativo Android 12 con One UI Core 4
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$110 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 25 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/88/6d/c6/886dc66b664397f9f9355d3a3667504c.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi 12C</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla LCD de 6.71 pulgadas, resolución HD+ 1650 x 720 píxeles, relación de aspecto 20.6:9, brillo de 500 nits, relación de contraste 1500:1, tasa de refresco 60 Hz
+                            <br>Procesador MediaTek Helio G85 (12 nm), CPU de ocho núcleos (2x 2.0 GHz Cortex-A75 + 6x 1.8 GHz Cortex-A55)
+                            <br>Memoria RAM Versiones de 3 GB, 4 GB y hasta 6 GB
+                            <br>Almacenamiento 32 GB, 64 GB o 128 GB, con posibilidad de ampliación mediante microSD hasta 1 TB
+                            <br>Cámara   Dual con sensor principal de 50 MP f/1.8 y sensor de profundidad 0.08 MP FRONTAL 5 MP f/2.2
+                            <br>Batería  5000 mAh, con carga rápida de 10 W
+                            <br>Sistema operativo MIUI 13 basado en Android 12
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$125 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 26 -->
+                <div class="product-card">
+                    <img src="https://www.alcarrito.com/media/catalog/product/k/r/krip_k60_al_carrito.jpg?width=400&height=400&canvas=400,400&optimize=medium&bg-color=255,255,255&fit=bounds" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Krip K60</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.1 pulgadas, resolución HD+ (720 x 1560 píxeles)
+                            <br>Procesador Unisoc SC9863A, octa-core a 1.6 GH
+                            <br>Memoria RAM 4GB
+                            <br>Almacenamiento 128 GB, expansible mediante microSD
+                            <br>Cámara  13 MP, apertura f/1.8 FRONTAL 5 MP
+                            <br>Batería  4000 mAh, no incluye carga rápida
+                            <br>Sistema operativo Android 12 (Go Edition)
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 27 -->
+                <div class="product-card">
+                    <img src="https://telfonak.com/wp-content/uploads/2023/10/pop-5.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Tecno 5 POP 5G</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.1 pulgadas, resolución HD+ (720 x 1560 píxeles), IPS LCD
+                            <br>Procesador Unisoc Spreadtrum SC7731E, quad-core a 1.3 GHz
+                            <br>Memoria RAM 2 GB
+                            <br>Almacenamiento 16 GB o 32 GB, ampliable mediante microSD
+                            <br>Cámara 5 MP con flash LED FRONTAL 5 MP
+                            <br>Batería  5000 mAh, no incluye carga rápida
+                            <br>Sistema operativo Android 11 (Go Edition) con interfaz HiOS 11
+                            <br>Conexión 2/3/4/5G
+                        </p> 
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 28 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/e5/3b/80/e53b8076d01ed1814209b39c74df2a72.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Redmi A3x</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla 6.71 pulgadas IPS LCD, resolución HD+ (720 x 1650 píxeles), tasa de refresco de 90 Hz, protección Gorilla Glass 3
+                            <br>Procesador Unisoc Tiger T603, octa-core a 1.8 GHz (2x Cortex-A75 + 6x Cortex-A55)
+                            <br>Memoria RAM 3GB o 4GB
+                            <br>Almacenamiento 64 GB o 128 GB, expandible con microSD
+                            <br>Cámara Dual, sensor principal de 8 MP f/2.0 + sensor auxiliar de 0.08 MP, con flash LED y soporte para video 1080p@30fps FRONTAL 5 MP f/2.2, con soporte para video 1080p@30fps
+                            <br>Batería  5000 mAh con carga rápida de 10 W
+                            <br>Sistema operativo Android 14 con MIUI, soporte para dos actualizaciones principales y tres años de soporte
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$115 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 29 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/95/4d/ba/954dba6bffb2a5d5e53d76e081eb63f1.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Samsung A10</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  6.2 pulgadas, tipo IPS LCD, resolución HD+ (720 x 1520 píxeles), con notch en forma de gota de agua (Infinity-V)
+                            <br>Procesador Exynos 7884 de ocho núcleos (2x Cortex-A73 a 1.6 GHz + 6x Cortex-A53 a 1.35 GHz)
+                            <br>Memoria RAM 2GB
+                            <br>Almacenamiento 32 GB, expandible mediante microSD hasta 512 GB
+                            <br>Cámara 13 MP, apertura f/1.9 FRONTAL 5 MP, apertura f/2.0, también soporta desbloqueo facial
+                            <br>Batería  3400 mAh, no extraíble
+                            <br>Sistema operativo Android 9.0 Pie con interfaz One UI, actualizable a Android 11
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$100 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 30 -->
+                <div class="product-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.v-smOPuhJNcm99YUmTy9SQHaHa?r=0&w=700&h=700&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu C5L</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  5 pulgadas FWVGA (480 x 854 píxeles), IPS LCD
+                            <br>Procesador Quad-core a 1.4 GHz, Unisoc SC9832E basado en Cortex-A53
+                            <br>Memoria RAM 1GB
+                            <br>Almacenamiento 8 GB (algunas versiones con 16 GB)
+                            <br>Cámara 5 MP con flash LED FRONTAL 2 MP con flash LED
+                            <br>Batería 2000 mAh, Li-Polymer, removible
+                            <br>Sistema operativo Android 8.1 Oreo Go Edition
+                            <br>Conexión 2/3/4G LTE
+                        </p> 
+                        <p class="product-price">$85 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 31 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/3b/7a/97/3b7a973de5bff1bd8900b72f1ba66502.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-TCL L5</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  IPS TFT de 5.0 pulgadas, resolución FWVGA+ (480 x 960 píxeles), densidad de 215 ppi
+                            <br>Procesador MediaTek MT6739, quad-core a 1.28 GHz
+                            <br>Memoria RAM 1GB
+                            <br>Almacenamiento 8 GB o 16 GB, ampliable mediante microSD hasta 32 GB
+                            <br>Cámara 8 MP con enfoque automático (AF), soporte de video 1080p@30fps, estabilización electrónica (EIS), y flash LED FRONTAL 5 MP con flash LED, soporte de video 720p
+                            <br>Batería  2000 mAh Li-Ion, no especifica carga rápida
+                            <br>Sistema operativo Android 8.1 Oreo Go Edition
+                            <br>Conexión 2/3/4G LTE 
+                        </p> 
+                        <p class="product-price">$65 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 32 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/bd/67/f0/bd67f0d0325780d22b3f3fafa81d4e22.jpg" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu C5L +</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  5.5 pulgadas, resolución 480 x 960 píxeles, tipo TFT, 195 ppi, con una relación aproximada de pantalla-cuerpo del 70.6%
+                            <br>Procesador  Spreadtrum SC9832E, quad-core ARM Cortex-A53 a 1.4 GHz
+                            <br>Memoria RAM 2GB
+                            <br>Almacenamiento 16 GB, ampliable mediante microSD (microSDHC, microSDXC) hasta 64 GB
+                            <br>Cámara 5 MP con flash LED, grabación de video hasta 1080p a 30 fps FRONTAL 5 MP con flash LED
+                            <br>Batería  Li-Ion 2000 mAh (no especifica soporte de carga rápida)
+                            <br>Sistema operativo Android 12 Go Edition
+                            <br>Conexión 2/3/4G LT (en el caso de Cuba solo 2G)
+                        </p> 
+                        <p class="product-price">$50 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Móvil 33 -->
+                <div class="product-card">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.cUyCPEVAk8MLP1BzczqcjQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Móviles" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Móviles-Blu G73L +</h3>
+                        <p class="product-description">Ficha técnica:
+                            <br>Pantalla  IPS TFT de 6.8 pulgadas, resolución HD+ 720 x 1600 píxeles, densidad 258 ppi, con ratio de pantalla de ~85.1%
+                            <br>Procesador  Unisoc SC9863A, octa-core (4x ARM Cortex-A55 a 1.6 GHz + 4x ARM Cortex-A55 a 1.2 GHz), GPU IMG8322 @550 MHz
+                            <br>Memoria RAM 2 GB + 2 GB de RAM virtual (expansión)
+                            <br>Almacenamiento 64 GB, ampliable mediante microSD hasta 128 GB
+                            <br>Cámara  Dual de 13 MP + 2 MP (sensor de profundidad), con flash LED FRONTAL 8 MP
+                            <br>Batería 5000 mAh, con carga estándar (no especifica carga rápida)
+                            <br>Sistema operativo Android 13 Go Edition
+                            <br>Conexión 2/3/4G LT 
+                        </p> 
+                        <p class="product-price">$95 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección Accesorios -->
+        <div class="category-section" id="accesorios">
+            <h2 class="section-title">Accesorios</h2>
+            <div class="products">
+                <!-- Accesorio 1 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/29/c8/21/29c8215d64c3f57cfcb8d909078f6a7b.jpg" alt="Cables v8-tipoC-iphone" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Cables v8-tipoC-iphone</h3>
+                        <p class="product-description">¡Aprovecha nuestra super promoción en cables para teléfonos! Tenemos cables de alta calidad para todos los dispositivos: cables tipo V8, tipo C y para iPhone. Disfruta de una carga rápida y transferencia de datos eficiente con cables resistentes, duraderos y compatibles con tus dispositivos favoritos. Ideal para casa, oficina o llevar a todas partes. ¡No te quedes sin energía, renueva tus cables con nosotros al mejor precio!</p>
+                        <p class="product-price">$hasta 5 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Accesorio 2 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/c6/4d/9d/c64d9dbd831a98d7f0ce6161fc6afcd0.jpg" alt="Smartwatch" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-OTG</h3>
+                        <p class="product-description">¡Descubre nuestra promoción especial en cables OTG! Convierte tu teléfono o tablet en una verdadera estación de trabajo y ocio conectando fácilmente dispositivos externos como memorias USB, teclados, ratones, cámaras y más. Nuestros cables OTG son compatibles con la mayoría de smartphones y tablets, ofreciendo una conexión rápida, segura y estable. Aprovecha esta oportunidad para ampliar las funcionalidades de tu dispositivo al mejor precio. ¡No te quedes sin el tuyo y lleva tu experiencia móvil al siguiente nivel!</p>
+                        <p class="product-price">$hasta 5 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Accesorio 3 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/ca/e6/8d/cae68de290d5a9acb87ba6e65f8561c4.jpg" alt="Cargador Rápido" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Ventosas para moviles</h3>
+                        <p class="product-description">¡No te pierdas nuestra promoción especial en ventosas para móviles! Perfectas para sujetar tu teléfono de manera secura y cómoda en cualquier superficie: vidrio, metal, plástico y más. Ideales para usar en el coche, escritorio o en casa, facilitando la visualización y uso sin manos. Resistentes, fáciles de instalar y reutilizables. Dale a tu móvil la sujeción que merece y aprovecha este descuento exclusivo ahora mismo. ¡Haz que tu teléfono esté siempre al alcance y seguro con nuestras ventosas para móviles!</p>
+                        <p class="product-price">$hasta 5 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Accesorio 4 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/73/66/84/7366841b330752ecaeeb0baf1986c661.jpg" alt="Funda Protectora" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Memorias</h3>
+                        <p class="product-description">¡Aprovecha nuestra increíble promoción en memorias! Amplía el almacenamiento de tu teléfono, tablet o cámara con memorias de alta capacidad, velocidad y confiabilidad. Perfectas para guardar fotos, videos, música y documentos sin preocuparte por el espacio. Disponibles en diversos tamaños y marcas reconocidas, con precios irresistibles para que no te quedes sin espacio. No dejes pasar esta oferta y lleva contigo toda tu información siempre a la mano. ¡Renueva tu memoria ahora y disfruta de un rendimiento óptimo!</p>
+                        <p class="product-price">$hasta 12 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 5 -->
+                <div class="product-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.iLs861jIAk74gQYRT3qsxQHaFk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Funda Protectora" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Cargadores</h3>
+                        <p class="product-description">¡No te pierdas nuestra promoción exclusiva en cargadores para todo tipo de dispositivos! Cargadores rápidos, seguros y compatibles con smartphones, tablets y más, que garantizan una carga eficiente y prolongan la vida útil de tus baterías. Disponibles en diferentes modelos y potencias para adaptarse a todas tus necesidades. Aprovecha esta oferta especial y mantén tus dispositivos siempre listos para usar. ¡Carga con confianza y al mejor precio solo con nosotros!</p>
+                        <p class="product-price">$hasta 8 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 6 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/bd/0a/28/bd0a28f2b8d29ae3a33c6eb7f2fe535a.jpg" alt="Funda Protectora" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Micas</h3>
+                        <p class="product-description">¡Protege la pantalla de tu móvil con nuestra promoción especial en micas de alta calidad! Micas resistentes a golpes, rayones y huellas, que mantienen la claridad y sensibilidad táctil de tu pantalla. Fáciles de instalar y compatibles con una amplia variedad de modelos. No arriesgues tu dispositivo, dale la protección que merece con nuestras micas al mejor precio. ¡Aprovecha esta oferta y mantén tu pantalla como nueva!</p>
+                        <p class="product-price">$hasta 3 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 7 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/ac/12/c4/ac12c4d404e8bea1a8d23315ff2bf4cb.jpg" alt="Funda Protectora" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Forros</h3>
+                        <p class="product-description">¡Protege y personaliza tu teléfono con nuestra increíble promoción en forros! Disponibles en una variedad de estilos, colores y materiales resistentes para mantener tu móvil seguro contra golpes, caídas y rayones. Forros que se adaptan perfectamente a tu modelo, brindando comodidad y acceso fácil a todos los botones y puertos. Aprovecha esta oportunidad para darle a tu teléfono un toque único y la protección que necesita al mejor precio. ¡No esperes más y consigue el forro ideal para tu dispositivo hoy mismo!</p>
+                        <p class="product-price">$hasta 6 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 8 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/1e/f0/8a/1ef08aa50ff910c299564b2357615421.jpg" alt="Regelta usb" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Regleta usb</h3>
+                        <p class="product-description">¡Oferta especial en regletas USB! 🔌⚡Conecta y carga todos tus dispositivos al mismo tiempo con nuestra regleta USB. Máxima comodidad, múltiples puertos y protección garantizada. Ideal para tu hogar y oficina. ¡No te quedes sin la tuya, aprovecha el descuento por tiempo limitado!</p>
+                        <p class="product-price">$hasta 10 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 9 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/ae/68/f3/ae68f3aa85dd2939dc5100d7bcf719ac.jpg" alt="Cargador portatil" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Cargador portatil</h3>
+                        <p class="product-description">¡Aprovecha! Llévate tu cargador portátil solar. Perfecto para mantener tus dispositivos cargados en cualquier lugar, solo con la energía del sol.Oferta válida hasta agotar existencias.</p>
+                        <p class="product-price">$hasta 30 USD</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Accesorio 10 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/9b/6a/8e/9b6a8eef5bf73369ab2c356e8b82650a.jpg" alt="Adaptador" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Accesorios-Adaptador</h3>
+                        <p class="product-description">¡No te pierdas nuestro set de cables de carga multifuncional! Incluye cable con conectores Tipo C, USB y Lightning, ideal para todos tus dispositivos. Perfecto para carga rápida y transferencia de datos. Aprovecha nuestra promoción de tiempo limitado y lleva tu set con envío rápido garantizado. ¡Haz tu pedido hoy mismo!¡Aprovecha esta promoción para set de cables de datos! Incluye cables multifuncionales con conectores Tipo C, USB y Lightning, ideales para carga y transferencia rápida en todos tus dispositivos. Perfectos para el día a día, con envío inmediato y garantía de calidad. ¡No te quedes sin el tuyo, compra ya con descuento especial!</p>
+                        <p class="product-price">$hasta 5usd</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Ropa-Zapatos -->
+        <div class="category-section" id="ropa-zapatos">
+            <h2 class="section-title">Ropa-Zapatos</h2>
+            <div class="products">
+                <!-- Ropa-Zapatos 1 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/e2/86/f8/e286f83dbe1156b60f65042f7a7c5af2.jpg" alt="Ropa-Zapatos" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Sandalias</h3>
+                        <p class="product-description">¡Disfruta de nuestra promoción especial en sandalias! Compra las tuyas y aprovecha grandes descuentos por tiempo limitado. Encuentra estilos para todas las ocasiones y estrena comodidad y moda este verano. ¡No te lo pierdas!</p>
+                        <p class="product-price">$usd-mn</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Ropa-Zapatos 2 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/5a/5b/8a/5a5b8a8a8a8a8a8a8a8a8a8a8a8a8a.jpg" alt="PMás productos" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Más productos</h3>
+                        <p class="product-description">- "Contáctanos para consultar la disponibilidad de más productos."- "¿Quieres más opciones? Escríbenos para conocer la disponibilidad actual."- "Consulta con nosotros si buscas productos específicos o mayores cantidades."- "Estamos aquí para ayudarte, contáctanos y te informamos sobre la disponibilidad."</p>
+                        <p class="product-price">$usd-mn</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Ropa-Zapatos 3 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/6a/5b/8a/6a5b8a8a8a8a8a8a8a8a8a8a8a8a8a.jpg" alt="Más Más productos " class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Más Más productos</h3>
+                        <p class="product-description">Contáctanos para consultar la disponibilidad de más productos."- "¿Quieres más opciones? Escríbenos para conocer la disponibilidad actual."- "Consulta con nosotros si buscas productos específicos o mayores cantidades."- "Estamos aquí para ayudarte, contáctanos y te informamos sobre la disponibilidad.</p>
+                        <p class="product-price">$usd-mn</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección Equipos -->
+        <div class="category-section" id="equipos">
+            <h2 class="section-title">Equipos</h2>
+            <div class="products">
+                <!-- Equipos 1 -->
+                <div class="product-card">
+                    <img src="https://dlcdnwebimgs.asus.com/gain/5670817f-14c6-4ad9-b036-441be4e12284/w800" alt="Equipos" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Laptos"</h3>
+                        <p class="product-description">Procesador: Intel® Celeron® N4500 1.1 GHz (hasta 2.8 GHz, 2 núcleos) o Intel® Pentium® Silver N6000 1.1 GHz (hasta 3.3 GHz, 4 núcleos)
+                            Pantalla: 14" HD (1366 x 768), retroiluminación LED, antideslumbrante
+                            Memoria: 4 GB DDR3 (un solo canal)
+                            Almacenamiento: 64 GB eMMC
+                            Puertos: USB 2.0, USB 3.2 Gen 1 Tipo A, USB 3.2 Gen 1 Tipo C, conector de audio combinado de 3.5 mm
+                            Cámara: 720p HD
+                            Audio: Audio ICEpower®, altavoz y micrófono integrados
+                            Conectividad: WiFi 5 (802.11ac) + Bluetooth 4.1
+                            Batería: 42 Wh, 3 celdas de ion de litio
+                            Sistema operativo: Windows 11 Home</p>
+                        <p class="product-price">$190 usd</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Equipos 2 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/5a/5b/8a/5a5b8a8a8a8a8a8a8a8a8a8a8a8a.jpg" alt="Más" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Más</h3>
+                        <p class="product-description">Contáctanos para consultar la disponibilidad de más productos."- "¿Quieres más opciones? Escríbenos para conocer la disponibilidad actual."- "Consulta con nosotros si buscas productos específicos o mayores cantidades."- "Estamos aquí para ayudarte, contáctanos y te informamos sobre la disponibilidad.</p>
+                        <p class="product-price">$usd-mn</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+                
+                <!-- Equipos 3 -->
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/736x/6a/5b/8a/6a5b8a8a8a8a8a8a8a8a8a8a8a8a8a.jpg" alt="Otros" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Otros</h3>
+                        <p class="product-description">Contáctanos para consultar la disponibilidad de más productos."- "¿Quieres más opciones? Escríbenos para conocer la disponibilidad actual."- "Consulta con nosotros si buscas productos específicos o mayores cantidades."- "Estamos aquí para ayudarte, contáctanos y te informamos sobre la disponibilidad.</p>
+                        <p class="product-price">$usd-mn</p>
+                        <button class="btn btn-secondary contact-whatsapp">Contactar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" class="back-to-top">↑</a>
+    
+    <footer>
+        <p>&copy; 2023 Mi Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // Función para contactar por WhatsApp
+        function contactWhatsApp(productName = '', productPrice = '') {
+            const phoneNumber = "5358891478";
+            
+            let message = "Hola, estoy interesado en ";
+            
+            if (productName) {
+                message += `el producto: ${productName}`;
+                if (productPrice) {
+                    message += ` (${productPrice})`;
+                }
+                message += ". Por favor, envíenme más información.";
+            } else {
+                message += "sus productos. Por favor, envíenme más información.";
+            }
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappLink, '_blank');
+        }
+        
+        // Configurar botones de contacto
+        document.querySelectorAll('.contact-whatsapp').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                
+                contactWhatsApp(productName, productPrice);
+            });
+        });
+        
+        // Botón para volver arriba
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Desplazarse a la sección correspondiente si hay un hash en la URL
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
