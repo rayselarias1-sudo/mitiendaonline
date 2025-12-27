@@ -9,6 +9,9 @@
     <meta name="keywords" content="tienda online, móviles, smartphones, accesorios móviles, ropa, zapatos, equipos tecnológicos, ofertas tecnología, comprar online">
     <meta name="author" content="Mi Tienda Online">
     <meta name="robots" content="index, follow">
+
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet" href="css/estilo_index.css">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -46,10 +49,10 @@
       "name": "Mi Tienda Online",
       "description": "Tienda online con los mejores precios en móviles, accesorios, ropa, zapatos y equipos tecnológicos",
       "url": "https://www.mitiendaonline.com",
-      "telephone": "+5358891478",
+      "telephone": "+5354954577",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Monte 315",
+        "streetAddress": "Hasta la puerta de su casa",
         "addressLocality": "La Habana",
         "addressCountry": "CU"
       },
@@ -62,7 +65,7 @@
       ]
     }
     </script>
-    
+    <!--
     <style>
         * {
             margin: 0;
@@ -331,6 +334,7 @@
             }
         }
     </style>
+-->
 </head>
 <body>
     <!-- Mejora de estructura semántica -->
@@ -416,7 +420,7 @@
                 </div>
             </article>
             
-            <!-- Producto Destacado 4: Equipos -->
+            <!-- Producto Destacado 4: Otras ofertas -->
             <article class="product-card" itemscope itemtype="https://schema.org/Product">
                 <img src="https://i.pinimg.com/736x/11/90/83/1190835df01353708329ffbe66e428e4.jpg" alt="Laptop moderna con pantalla Full HD" class="product-image" itemprop="image">
                 <div class="product-info">
@@ -442,7 +446,7 @@
             <div class="contact-info">
                 <p><strong>Teléfono:</strong> <span itemprop="telephone">+53 54954577</span></p>
                 <p><strong>Dirección:</strong> <span itemprop="address">Hasta la puerta de su casa</span></p>
-                <p><strong>Horario:</strong> <span itemprop="hoursAvailable">Lunes a Sábado: 6:00 AM - 9:00 PM</span></p>
+                <p><strong>Horario:</strong> <span itemprop="hoursAvailable">Lunes a Sábado: 6:00 AM - 6:00 PM</span></p>
             </div>
             
             <form class="contact-form" id="whatsappForm">
@@ -512,7 +516,7 @@
                                    `*Teléfono:* ${telefono}%0A` +
                                    `*Mensaje:* ${mensaje}`;
             
-            const phoneNumber = "5358891478";
+            const phoneNumber = "5354954577";
             const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
             
             window.open(whatsappLink, '_blank');
